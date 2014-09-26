@@ -8,6 +8,4 @@ module.exports = function(app) {
       var stats = yield* sendfile.call(this, './app/index.html');
       if (!this.status) this.throw(404);
     });
-
-  return clientV1;
 };
