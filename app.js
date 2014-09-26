@@ -15,9 +15,8 @@ require('./routers/APIv1.js')(app);
 require('./routers/clientV1.js')(app);
 
 app.use(function *(){
-  this.body = {
-    status: 404
-  };
+  this.status = 404;
+  this.body = 'Not found';
 });
 
 app.listen(3000);

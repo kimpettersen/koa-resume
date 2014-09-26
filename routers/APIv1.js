@@ -1,3 +1,4 @@
+'use strict';
 
 module.exports = function(app) {
   var rest = require('../utils/rest.js'),
@@ -12,14 +13,15 @@ module.exports = function(app) {
       this.body = yield rest.getOne(experience.model, id);
     })
     .post('/api/v1/experience', function *() {
-      console.log(this.request);
-      this.body = this.request;
-      // this.body = yield experience.model.create(this.request.body);
+      this.body = yield rest.post(experience.model, this.request.body);
     })
     .put('/api/v1/experience/:id', function *() {
-      this.body = yield rest.put(experience.model, id);
+      this.body = yield rest.put(experience.model, this.params.id, this.request.body);
+    })
+    .patch('/api/v1/experience/:id', function *() {
+      this.body = yield rest.patch(experience.model, this.params.id, this.request.body);
     })
     .del('/api/v1/experience/:id', function *() {
-      this.body = yield rest.del(experience.model, id);
-});
+      this.body = yield rest.del(experience.model, this.params.id);
+    });
 };
