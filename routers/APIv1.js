@@ -9,8 +9,7 @@ module.exports = function(app) {
       this.body = yield rest.getAll(experience.model);
     })
     .get('/api/v1/experience/:id', function *() {
-      var id = this.params.id;
-      this.body = yield rest.getOne(experience.model, id);
+      this.body = yield rest.getOne(experience.model, this.params.id);
     })
     .post('/api/v1/experience', function *() {
       this.body = yield rest.post(experience.model, this.request.body);
