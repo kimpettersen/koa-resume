@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('controller.main', [])
-  .controller('MainCtrl', function($scope, $timeout, RestService) {
+angular.module('controller.crud', [])
+  .controller('CRUDCtrl', function($scope, $timeout, RestService) {
     $scope.resources = {};
     $scope.status = '';
     $scope.resources.experience = {
