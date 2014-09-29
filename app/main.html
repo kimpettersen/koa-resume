@@ -1,4 +1,25 @@
-<p>Name: {{ name }}</p>
-<p>ServiceName: {{ serviceName }}</p>
+<h1>Create new</h1>
+<div style="background: pink" ng-if="showNotifications"> {{ notification }} </div>
+<form>
+  <input type="text" ng-model="newResource.where" placeholder="where">
+  <input type="text" ng-model="newResource.when" placeholder="when">
+  <input type="text" ng-model="newResource.description" placeholder="description">
 
+  <input ng-if="!editMode" value="Save" type="submit" ng-click="save('experience', newResource)">
+  <input ng-if="editMode" value="Save Changes" type="submit" ng-click="update('experience', newResource)">
+  <input value="Cancel" type="submit" ng-click="newResource = {}; notify('Cleared')">
+</form>
+
+<ul>
+  <li ng-if="resource.data.length > 0" ng-repeat="resource in resources">
+    <h1>{{ resource.name }}</h1>
+    <ul>
+      <li ng-repeat="data in resource.data">
+        {{ data }}
+        <button ng-click="remove(resource.name, data)">Delete</button>
+        <button ng-click="edit(data)">Edit</button>
+      </li>
+    </ul>
+  </li>
+</ul>
 

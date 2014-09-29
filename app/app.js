@@ -1,5 +1,5 @@
 angular
-  .module('resumeApp', ['ngRoute', 'service.rest', 'controller.main'])
+  .module('resumeApp', ['ngRoute', 'ngResource', 'service.rest', 'controller.main'])
   .config(function($routeProvider) {
     $routeProvider
       .when('/', {
