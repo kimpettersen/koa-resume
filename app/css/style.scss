@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'monsterrat';
+  src: url('/css/monsterrat/regular.ttf') format('truetype'),
+       url('/css/monsterrat/bold.ttf') format('truetype');
+}
+
+body {
+  font-family:'monsterrat', Fallback, sans-serif;
+}
+
+.resource-list {
+  width: 35%;
+  margin: 0 auto;
+
+  li * {
+    text-align: left;
+  }
+}
+
+#slide-1 {
+  // margin-top: 200px;
+}
+
+.slide {
+  margin-top: 300px;
+  text-align:center;
+}

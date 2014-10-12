@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>kimpettersen.org</title>
+    <script src="/bower_components/skrollr/dist/skrollr.min.js" type="text/javascript"></script>
     <script src="/bower_components/angular/angular.js" type="text/javascript"></script>
     <script src="/bower_components/angular-route/angular-route.js" type="text/javascript"></script>
     <script src="/bower_components/angular-resource/angular-resource.js" type="text/javascript"></script>
@@ -10,9 +11,11 @@
     <script src="scripts/restService.js" type="text/javascript"></script>
     <script src="scripts/crudCtrl.js" type="text/javascript"></script>
     <script src="scripts/mainCtrl.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
   </head>
 
   <body ng-app="resumeApp">
-    <div ng-view></div>
+    <div class="container" ng-view></div>
   </body>
 </html>
