@@ -1,24 +1,17 @@
 'use strict';
 
 angular.module('controller.main', [])
-  .controller('MainCtrl', function($scope, RestService) {
+  .controller('MainCtrl', function($scope, $window, RestService) {
     $scope.showErrorMessage = false;
     $scope.errorMessage = '';
-    var s = skrollr.init({
-        render: function(data) {
-            console.log(data.curTop);
-        }
-    });
+
     $scope.populate = function() {
       RestService.experience
         .query()
         .$promise
         .then(function(experience) {
-
-           $scope.experience = experience;
+          $scope.experience = experience;
         }).catch($scope.errorHandler);
-
-      console.log($scope.experience);
     };
 
     $scope.errorHandler = function(err) {
@@ -26,7 +19,19 @@ angular.module('controller.main', [])
       $scope.errorMessage = err;
     };
 
+    $scope.setCss = function() {
+      $scope.slideHeight = $window.innerHeight;
+      $scope.firstSlideMargin = Math.floor($window.innerHeight * .15);
+    };
+
+
+    angular.element($window).bind('resize', function() {
+      $scope.setCss();
+      return $scope.$apply();
+    });
+
     $scope.populate();
+    $scope.setCss();
 
   });
 

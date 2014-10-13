@@ -1,37 +1,69 @@
-<section class="error" ng-show="showErrorMessage">
-  <h1>{{ errorMessage }}</h1>
-</section>
+<div id="slide-1" class="slide" ng-style="{ 'height': slideHeight + 'px', 'margin-top': firstSlideMargin + 'px' }">
+  <img class="circular" src="assets/profile.jpg">
+  <h1>Kim Pettersen</h1>
+  <h2>Full Stack Software Engineer</h2>
+  <p>Learning new stuff makes me happy</p>
+  <p>Node.js, JavaScript and Python</p>
+  <p><a href="http://www.github.com/kimpettersen">Github</a></p>
+  <p><a href="http://www.linkedin.com/in/pettersenkim/">LinkedIn</a></p>
 
-<div class="content-wrapper">
-
-  <div id="slide-1" class="slide" data-bottom="opacity: 0" data-top="opacity: 0" data-center="opacity: 1">
-    <h1>Kim Pettersen</h1>
-
-    <p>Software Engineer</p>
-  </div>
-
-
-  <div id="slide-2" class="slide" data-bottom="opacity: 0" data-top="opacity: 0" data-center="opacity: 1">
-    <h1>Experience</h1>
-    <ul class="resource-list">
-      <li ng-repeat="item in experience">
-        <h2>
-          {{ item.where }}
-        </h2>
-
-        <p>
-          {{ item.when }}
-        </p>
-
-        <p>
-          {{ item.description }}
-        </p>
-      </li>
-    </ul>
-  </div>
-
-  <div id="slide-3" class="slide" data-bottom="opacity: 0" data-center="opacity: 1" data-top="opacity: 0">
-    <h2>This is section 2</h2>
-    <p>This should fade out</p>
-  </div>
 </div>
+
+<div class="slide" ng-style="{ 'height': slideHeight + 'px' }">
+  <h1>Experience</h1>
+  <ul class="slide-list">
+    <li ng-repeat="item in experience" >
+      <h2>
+        {{ item.where }}
+      </h2>
+
+      <p>
+        {{ item.when }}
+      </p>
+
+      <p>
+        {{ item.description }}
+      </p>
+    </li>
+  </ul>
+</div>
+
+<div class="slide" ng-style="{ 'height': slideHeight + 'px' }">
+  <h1>Experience</h1>
+  <ul class="slide-list">
+    <li ng-repeat="item in experience" >
+      <h2>
+        {{ item.where }}
+      </h2>
+
+      <p>
+        {{ item.when }}
+      </p>
+
+      <p>
+        {{ item.description }}
+      </p>
+    </li>
+  </ul>
+</div>
+
+<div class="slide" ng-style="{ 'height': slideHeight + 'px' }">
+  <h1>Experience</h1>
+  <ul class="slide-list">
+    <li ng-repeat="item in experience" >
+      <h2>
+        {{ item.where }}
+      </h2>
+
+      <p>
+        {{ item.when }}
+      </p>
+
+      <p>
+        {{ item.description }}
+      </p>
+    </li>
+  </ul>
+</div>
+
+
