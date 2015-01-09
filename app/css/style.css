@@ -48,4 +48,24 @@ a {
     list-style: none;
     padding: 0; }
 
+.crud-wrapper h1 {
+  font-size: 2rem; }
+.crud-wrapper textarea {
+  width: 50%;
+  height: 100px; }
+.crud-wrapper .error-message {
+  background: pink;
+  position: fixed;
+  top: 0;
+  font-size: 1.7rem; }
+  .crud-wrapper .error-message button {
+    float: right;
+    width: 80px;
+    height: 80px;
+    margin: 15px; }
+.crud-wrapper .token {
+  margin-top: 30px;
+  width: 50%;
+  heigth: 50px; }
+
 /*# sourceMappingURL=style.css.map */

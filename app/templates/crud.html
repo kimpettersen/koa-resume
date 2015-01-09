@@ -1,25 +1,60 @@
-<h1>Create new</h1>
-<div style="background: pink" ng-if="showNotifications"> {{ notification }} </div>
-<form>
-  <input type="text" ng-model="newResource.where" placeholder="where">
-  <input type="text" ng-model="newResource.when" placeholder="when">
-  <input type="text" ng-model="newResource.description" placeholder="description">
+<div class="crud-wrapper">
+  <div class="error-message" ng-if="showNotifications">
+    <button ng-click="hideNotification()">Close</button>
+    {{ notification }}
+  </div>
+  <form ng-submit="saveToken(token)">
+    <input type="password" class="token" ng-model="token" placeholder="Authorization token">
+  </form>
 
-  <input ng-if="!editMode" value="Save" type="submit" ng-click="save('experience', newResource)">
-  <input ng-if="editMode" value="Save Changes" type="submit" ng-click="update('experience', newResource)">
-  <input value="Cancel" type="submit" ng-click="newResource = {}; notify('Cleared')">
-</form>
+  <hr>
+  <ul>
+    <li ng-if="resource.data.length > 0" ng-repeat="resource in resources">
+      <h1>{{ resource.name }}</h1>
+      <ul>
+        <li ng-repeat="data in resource.data">
+          {{ data }}
+          <button ng-click="remove(resource.name, data)">Delete</button>
+          <button ng-click="edit(resource.name.toLowerCase(), data)">Edit</button>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <hr>
 
-<ul>
-  <li ng-if="resource.data.length > 0" ng-repeat="resource in resources">
-    <h1>{{ resource.name }}</h1>
-    <ul>
-      <li ng-repeat="data in resource.data">
-        {{ data }}
-        <button ng-click="remove(resource.name, data)">Delete</button>
-        <button ng-click="edit(data)">Edit</button>
-      </li>
-    </ul>
-  </li>
-</ul>
+  <h1>Experience</h1>
+  <textarea type="text" ng-model="experienceResource.where" placeholder="where"></textarea>
+  <textarea type="text" ng-model="experienceResource.when" placeholder="when"></textarea>
+  <textarea type="text" ng-model="experienceResource.description" placeholder="description"></textarea>
 
+  <button ng-if="!experienceEditMode" ng-click="save('experience', experienceResource)">Save</button>
+  <button ng-if="experienceEditMode" ng-click="update('experience', experienceResource)">Save Changes</button>
+  <button ng-click="clear('experience')">Cancel</button>
+
+  <h1>Education</h1>
+  <textarea type="text" ng-model="educationResource.where" placeholder="where"></textarea>
+  <textarea type="text" ng-model="educationResource.when" placeholder="when"></textarea>
+  <textarea type="text" ng-model="educationResource.description" placeholder="description"></textarea>
+
+  <button ng-if="!educationEditMode" ng-click="save('education', educationResource)">Save</button>
+  <button ng-if="educationEditMode" ng-click="update('education', educationResource)">Save Changes</button>
+  <button ng-click="clear('experience')">Cancel</button>
+
+  <h1>Project</h1>
+  <textarea type="text" ng-model="projectResource.title" placeholder="title"></textarea>
+  <textarea type="text" ng-model="projectResource.description" placeholder="description"></textarea>
+
+  <button ng-if="!projectEditMode" ng-click="save('project', projectResource)">Save</button>
+  <button ng-if="projectEditMode" ng-click="update('project', projectResource)">Save Changes</button>
+  <button ng-click="clear('experience')">Cancel</button>
+
+  <h1>About</h1>
+  <textarea type="text" ng-model="aboutResource.title" placeholder="title"></textarea>
+  <textarea type="text" ng-model="aboutResource.description" placeholder="description"></textarea>
+
+  <button ng-if="!aboutEditMode" ng-click="save('about', aboutResource)">Save</button>
+  <button ng-if="aboutEditMode" ng-click="update('about', aboutResource)">Save Changes</button>
+  <button ng-click="clear('experience')">Cancel</button>
+
+
+</div>

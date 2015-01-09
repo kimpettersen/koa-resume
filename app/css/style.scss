@@ -66,3 +66,33 @@ a {
   }
 }
 
+.crud-wrapper {
+  h1 {
+    font-size: 2rem
+  }
+  textarea {
+    width: 50%;
+    height: 100px;
+  }
+
+  .error-message {
+    background: pink;
+    position: fixed;
+    top:0;
+    font-size: 1.7rem;
+
+    button {
+      float: right;
+      width: 80px;
+      height: 80px;
+      margin: 15px;
+    }
+  }
+
+  .token{
+    margin-top: 30px;
+    width: 50%;
+    heigth: 50px;
+
+  }
+}

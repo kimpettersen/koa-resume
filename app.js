@@ -6,16 +6,21 @@ var koa = require('koa'),
     routing = require('koa-router'),
     statics = require('koa-static'),
     json = require('koa-json'),
+    auth = require('./utils/auth.js'),
     app = koa();
 
 app.use(bodyParser());
 app.use(json());
+app.use(auth());
 app.use(routing(app));
 
 
-require('./config.js'),
-require('./routers/APIv1.js')(app);
-require('./routers/clientV1.js')(app);
+require('./utils/db.js'),
+require('./routers/experience.js')(app);
+require('./routers/education.js')(app);
+require('./routers/project.js')(app);
+require('./routers/about.js')(app);
+require('./routers/client.js')(app);
 
 app.use(statics(path.join(__dirname, 'app')));
 
