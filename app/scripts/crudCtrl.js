@@ -25,13 +25,26 @@ angular.module('controller.crud', [])
       name: 'About'
     };
 
+    $scope.resources.introduction = {
+      data: RestService.introduction.query(),
+      name: 'Introduction'
+    };
+
     $scope.saveToken = function(token) {
       sessionStorage.setItem('token', token);
       $scope.token = '';
     };
 
     $scope.remove = function(name, data) {
-      var resource = RestService[name.toLowerCase()].delete(data);
+      var resource,
+          toDelete;
+
+      toDelete = confirm('Sure?');
+      if (toDelete === false) {
+        $scope.notify('Aborting deletion');
+        return;
+      }
+      resource = RestService[name.toLowerCase()].delete(data),
       resource.$promise.then(function() {
         $scope.notify('Succesfully removed: ' + data._id);
       }).catch($scope.notify);
@@ -59,7 +72,6 @@ angular.module('controller.crud', [])
 
     $scope.edit = function(name, data) {
       $scope[name + 'Resource'] = data;
-      console.log(name + 'EditMode');
       $scope[name + 'EditMode'] = true;
     };
 

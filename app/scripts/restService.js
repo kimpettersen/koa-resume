@@ -83,5 +83,26 @@ angular.module('service.rest', [])
       }
     });
 
+    service.introduction = $resource('/api/v1/introduction/:_id', {_id: '@_id'}, {
+      save: {
+        method:'POST',
+        headers: {
+          Authorization: sessionStorage.getItem('token')
+        }
+      },
+      update: {
+        method:'PUT',
+        headers: {
+          Authorization: sessionStorage.getItem('token')
+        }
+      },
+      'delete': {
+        method:'DELETE',
+        headers: {
+          Authorization: sessionStorage.getItem('token')
+        }
+      }
+    });
+
     return service;
   });

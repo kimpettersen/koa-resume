@@ -20,6 +20,7 @@ require('./routers/experience.js')(app);
 require('./routers/education.js')(app);
 require('./routers/project.js')(app);
 require('./routers/about.js')(app);
+require('./routers/introduction.js')(app);
 require('./routers/client.js')(app);
 
 app.use(statics(path.join(__dirname, 'app')));

@@ -12,8 +12,8 @@
     <li ng-if="resource.data.length > 0" ng-repeat="resource in resources">
       <h1>{{ resource.name }}</h1>
       <ul>
-        <li ng-repeat="data in resource.data">
-          {{ data }}
+        <li ng-repeat="data in resource.data | orderBy: 'order'">
+          {{ data.order }} || {{ data }}
           <button ng-click="remove(resource.name, data)">Delete</button>
           <button ng-click="edit(resource.name.toLowerCase(), data)">Edit</button>
         </li>
@@ -23,38 +23,50 @@
   <hr>
 
   <h1>Experience</h1>
-  <textarea type="text" ng-model="experienceResource.where" placeholder="where"></textarea>
-  <textarea type="text" ng-model="experienceResource.when" placeholder="when"></textarea>
-  <textarea type="text" ng-model="experienceResource.description" placeholder="description"></textarea>
+  <textarea ng-model="experienceResource.where" placeholder="where"></textarea>
+  <textarea ng-model="experienceResource.when" placeholder="when"></textarea>
+  <textarea ng-model="experienceResource.description" placeholder="description"></textarea>
+  <textarea type="text" ng-model="experienceResource.order" placeholder="order"></textarea>
 
   <button ng-if="!experienceEditMode" ng-click="save('experience', experienceResource)">Save</button>
   <button ng-if="experienceEditMode" ng-click="update('experience', experienceResource)">Save Changes</button>
-  <button ng-click="clear('experience')">Cancel</button>
+  <button ng-click="clear('experience')">Cancel/Clear</button>
 
   <h1>Education</h1>
-  <textarea type="text" ng-model="educationResource.where" placeholder="where"></textarea>
-  <textarea type="text" ng-model="educationResource.when" placeholder="when"></textarea>
-  <textarea type="text" ng-model="educationResource.description" placeholder="description"></textarea>
+  <textarea ng-model="educationResource.where" placeholder="where"></textarea>
+  <textarea ng-model="educationResource.when" placeholder="when"></textarea>
+  <textarea ng-model="educationResource.description" placeholder="description"></textarea>
+  <textarea type="text" ng-model="educationResource.order" placeholder="order"></textarea>
 
   <button ng-if="!educationEditMode" ng-click="save('education', educationResource)">Save</button>
   <button ng-if="educationEditMode" ng-click="update('education', educationResource)">Save Changes</button>
-  <button ng-click="clear('experience')">Cancel</button>
+  <button ng-click="clear('education')">Cancel/Clear</button>
 
   <h1>Project</h1>
-  <textarea type="text" ng-model="projectResource.title" placeholder="title"></textarea>
-  <textarea type="text" ng-model="projectResource.description" placeholder="description"></textarea>
+  <textarea ng-model="projectResource.title" placeholder="title"></textarea>
+  <textarea ng-model="projectResource.description" placeholder="description"></textarea>
+  <textarea type="text" ng-model="projectResource.order" placeholder="order"></textarea>
 
   <button ng-if="!projectEditMode" ng-click="save('project', projectResource)">Save</button>
   <button ng-if="projectEditMode" ng-click="update('project', projectResource)">Save Changes</button>
-  <button ng-click="clear('experience')">Cancel</button>
+  <button ng-click="clear('project')">Cancel/Clear</button>
 
   <h1>About</h1>
-  <textarea type="text" ng-model="aboutResource.title" placeholder="title"></textarea>
-  <textarea type="text" ng-model="aboutResource.description" placeholder="description"></textarea>
+  <textarea ng-model="aboutResource.title" placeholder="title"></textarea>
+  <textarea ng-model="aboutResource.description" placeholder="description"></textarea>
+  <textarea type="text" ng-model="aboutResource.order" placeholder="order"></textarea>
 
   <button ng-if="!aboutEditMode" ng-click="save('about', aboutResource)">Save</button>
   <button ng-if="aboutEditMode" ng-click="update('about', aboutResource)">Save Changes</button>
-  <button ng-click="clear('experience')">Cancel</button>
+  <button ng-click="clear('about')">Cancel/Clear</button>
 
+
+  <h1>Introduction</h1>
+  <textarea ng-model="introductionResource.description" placeholder="description"></textarea>
+  <textarea ng-model="introductionResource.order" placeholder="order"></textarea>
+
+  <button ng-if="!introductionEditMode" ng-click="save('introduction', introductionResource)">Save</button>
+  <button ng-if="introductionEditMode" ng-click="update('introduction', introductionResource)">Save Changes</button>
+  <button ng-click="clear('introduction')">Cancel/Clear</button>
 
 </div>

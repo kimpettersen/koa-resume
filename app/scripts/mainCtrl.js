@@ -12,6 +12,34 @@ angular.module('controller.main', [])
         .then(function(experience) {
           $scope.experience = experience;
         }).catch($scope.errorHandler);
+
+      RestService.education
+        .query()
+        .$promise
+        .then(function(education) {
+          $scope.education = education;
+        }).catch($scope.errorHandler);
+
+      RestService.about
+        .query()
+        .$promise
+        .then(function(about) {
+          $scope.about = about;
+        }).catch($scope.errorHandler);
+
+      RestService.project
+        .query()
+        .$promise
+        .then(function(project) {
+          $scope.project = project;
+        }).catch($scope.errorHandler);
+
+      RestService.introduction
+        .query()
+        .$promise
+        .then(function(introduction) {
+          $scope.introduction = introduction;
+        }).catch($scope.errorHandler);
     };
 
     $scope.errorHandler = function(err) {

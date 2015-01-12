@@ -28,9 +28,17 @@ p {
 a {
   color: #0BB2FC; }
 
-.container {
-  height: 100%;
-  position: relative; }
+ul {
+  list-style: none; }
+
+.container .content {
+  text-align: center;
+  margin: 10%; }
+
+.front-page {
+  text-align: center;
+  height: 100vh;
+  margin: 10%; }
 
 .circular {
   background-size: cover;
@@ -38,19 +46,11 @@ a {
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px; }
 
-.slide {
-  opacity: 1;
-  height: 900px;
-  text-align: center; }
-  .slide .slide-list {
-    width: 35%;
-    margin: 0 auto;
-    list-style: none;
-    padding: 0; }
-
 .crud-wrapper h1 {
+  margin-left: 5%;
   font-size: 2rem; }
 .crud-wrapper textarea {
+  margin-left: 5%;
   width: 50%;
   height: 100px; }
 .crud-wrapper .error-message {
