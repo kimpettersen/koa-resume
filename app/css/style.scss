@@ -16,6 +16,7 @@
 $secondary: #0BB2FC;
 
 body {
+  background: #fff;
   font-family:'roboto-normal', sans-serif;
   font-weight: 100;
   margin: 0;
@@ -53,6 +54,7 @@ ul {
 }
 
 .front-page {
+
   text-align: center;
   height:100vh;
   margin: 10%;
@@ -66,7 +68,7 @@ ul {
 }
 
 .crud-wrapper {
-
+  font-size: 1rem;
   h1 {
     margin-left: 5%;
     font-size: 2rem

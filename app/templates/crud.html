@@ -13,7 +13,7 @@
       <h1>{{ resource.name }}</h1>
       <ul>
         <li ng-repeat="data in resource.data | orderBy: 'order'">
-          {{ data.order }} || {{ data }}
+          {{ data.order }}  {{ data.title }} {{ data.where }} {{ data.description }}
           <button ng-click="remove(resource.name, data)">Delete</button>
           <button ng-click="edit(resource.name.toLowerCase(), data)">Edit</button>
         </li>

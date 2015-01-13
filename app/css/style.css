@@ -8,6 +8,7 @@
   font-family: 'roboto-bold';
   src: url("/assets/roboto/Roboto-bold.ttf") format("truetype"); }
 body {
+  background: #fff;
   font-family: 'roboto-normal', sans-serif;
   font-weight: 100;
   margin: 0;
@@ -46,26 +47,28 @@ ul {
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px; }
 
-.crud-wrapper h1 {
-  margin-left: 5%;
-  font-size: 2rem; }
-.crud-wrapper textarea {
-  margin-left: 5%;
-  width: 50%;
-  height: 100px; }
-.crud-wrapper .error-message {
-  background: pink;
-  position: fixed;
-  top: 0;
-  font-size: 1.7rem; }
-  .crud-wrapper .error-message button {
-    float: right;
-    width: 80px;
-    height: 80px;
-    margin: 15px; }
-.crud-wrapper .token {
-  margin-top: 30px;
-  width: 50%;
-  heigth: 50px; }
+.crud-wrapper {
+  font-size: 1rem; }
+  .crud-wrapper h1 {
+    margin-left: 5%;
+    font-size: 2rem; }
+  .crud-wrapper textarea {
+    margin-left: 5%;
+    width: 50%;
+    height: 100px; }
+  .crud-wrapper .error-message {
+    background: pink;
+    position: fixed;
+    top: 0;
+    font-size: 1.7rem; }
+    .crud-wrapper .error-message button {
+      float: right;
+      width: 80px;
+      height: 80px;
+      margin: 15px; }
+  .crud-wrapper .token {
+    margin-top: 30px;
+    width: 50%;
+    heigth: 50px; }
 
 /*# sourceMappingURL=style.css.map */
